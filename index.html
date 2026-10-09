@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="pl">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gustaw Max Szperliński — Portfolio</title>
   <meta name="description"
-    content="Gustaw Max Szperliński — Data Engineering | AI & Automatyzacja | Digital Twins | Mechatronika Przemysłowa.">
+    content="Gustaw Max Szperliński — Data Engineering | AI & Automation | Digital Twins | Industrial Mechatronics.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -17,15 +17,9 @@
   <div class="wrapper">
     <header class="header">
       <h1 class="name">Gustaw Max Szperliński</h1>
-      <p class="role">Data Engineering • AI & Automatyzacja • Digital Twins • Mechatronika</p>
+      <p class="role">Data Engineering • AI & Automation • Digital Twins • Industrial Mechatronics</p>
       <p class="bio">
-        Interesuję się technologią i mechaniką. Miałem okazję pracować m.in. nad digital twins dla procesów produkcji
-        szczepionek, wspierających optymalizację parametrów reaktorów białkowych. Połączenie rzeczywistych procesów
-        przemysłowych z
-        nowymi technologiami to obszar, w którym chcę się rozwijać. Dlatego zmieniłem branżę i obecnie pracuję w firmie
-        integrującej linie technologiczne do produkcji biomasy. Od listopada rozpoczynam również studia podyplomowe z
-        mechatroniki przemysłowej na Politechnice Wrocławskiej, aby połączyć moje dotychczasowe doświadczenie w IT z
-        praktyczną wiedzą o maszynach i procesach fizycznych.
+        I’m passionate about technology and mechanics. My experience includes working on digital twins for vaccine manufacturing processes, specifically to support the optimization of parameters in protein bioreactors. Bridging real-world industrial processes with emerging technologies is the field I want to pursue further. This is why I transitioned into a new industry and now work at a company specializing in the integration of biomass production lines. In November, I will also begin a postgraduate program in Industrial Mechatronics at Wrocław University of Science and Technology, allowing me to combine my existing IT experience with practical knowledge of machinery and physical processes.
       </p>
       <nav class="links">
         <a href="https://github.com/OGGEE61" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
@@ -33,13 +27,13 @@
         <a href="https://www.linkedin.com/in/gustaw-max-szperliński-22a45a214/?isSelfProfile=true" target="_blank"
           rel="noopener noreferrer">LinkedIn ↗</a>
         <span class="sep">/</span>
-        <a href="mailto:kontakt@example.com">Email ↗</a>
+        <a href="mailto:maxgustaw@szperlinski.pl">maxgustaw@szperlinski.pl ↗</a>
       </nav>
     </header>
 
     <main class="main">
       <section class="section">
-        <h2 class="section-title">Wybrane Projekty</h2>
+        <h2 class="section-title">Featured Projects</h2>
 
         <ul class="project-list">
           <!-- 1. SportsCar DB -->
@@ -52,12 +46,7 @@
                 class="repo-link">GitHub ↗</a>
             </div>
             <p class="project-desc">
-              VIN-centryczna platforma do monitorowania rynku aut sportowych i precyzyjnej analizy wycen w czasie.
-              Relacyjna struktura danych opiera się na głównej tabeli unikalnych numerów VIN połączonej relacją
-              <em>one-to-many</em> z tabelą obserwacji, co pozwala śledzić cykl życia i wahania cen konkretnego
-              egzemplarza na przestrzeni czasu. Pipeline dekoduje dane bezpośrednio ze strumieni dehydratacji Otomoto
-              (analiza obiektów JSON z <code>__NEXT_DATA__</code> oraz zapytań GraphQL), a nieustrukturyzowane parametry
-              normalizowane są przy użyciu LLM.
+              A VIN-centric platform for monitoring the sports car market and tracking vehicle valuations over time. The relational data model is built around a master table of unique VINs linked through a one-to-many relationship to an observations table, enabling the tracking of individual vehicles throughout their lifecycle and the analysis of price fluctuations over time. The pipeline decodes data directly from Otomoto's hydrated data streams by parsing __NEXT_DATA__ JSON objects and GraphQL requests, while unstructured vehicle attributes are normalized using an LLM.
             </p>
             <div class="tags">
               <span>Python</span>
@@ -80,7 +69,7 @@
                 class="repo-link">GitHub ↗</a>
             </div>
             <p class="project-desc">
-              Automatyczny monitoring ogłoszeń motocykli Yamaha na OLX działający w architekturze serverless. System cyklicznie odpytuje bezpośrednie wewnętrzne endpointy REST OLX w poszukiwaniu egzemplarzy spełniających określone wymagania co do modelu i silnika, pobiera szczegółowe metadane oferty, a następnie przesyła zdjęcia do multimodalnego modelu Gemini 2.5 Flash Vision. Model analizuje klatki pod kątem obecności charakterystycznego dla Yamahy fabrycznego lakieru Iconic Blue na plastikach, felgach i elementach nadwozia, automatycznie odrzucając niespełniające kryteriów ogłoszenia.
+              An automated monitoring system for Yamaha motorcycle listings on OLX, built on a serverless architecture. The system periodically queries OLX's internal REST endpoints to identify motorcycles matching specific model and engine criteria, retrieves detailed listing metadata, and submits listing images to the Gemini 2.5 Flash Vision multimodal model. The model analyzes the images for Yamaha's distinctive factory Iconic Blue finish across body panels, wheels, and other exterior components, automatically filtering out listings that do not meet the specified visual criteria.
             </p>
             <div class="tags">
               <span>Cloudflare Workers</span>
@@ -97,10 +86,10 @@
               <span class="project-title">
                 Asystent Menago (Menago AI CRM)
               </span>
-              <span class="repo-link">System Komercyjny</span>
+              <span class="repo-link">Commercial System</span>
             </div>
             <p class="project-desc">
-              Dedykowany, AI-native asystent operacyjny i system CRM stworzony dla managera artystów. Wykorzystuje moduł RAG oraz wektorowe embeddingi historycznych danych — faktur, budżetów projektowych, umów i planów — które służą asystentowi jako głęboki kontekst operacyjny do analiz i odpowiadania na pytania. Platforma automatyzuje obieg dokumentów oraz fakturowanie (OCR faktur przez Gemini 2.5 Flash Vision, czat i obsługa komend przez polski model Bielik), stosując kluczowy bezpiecznik architektoniczny Human-in-the-Loop: wszystkie propozycje zmian w danych, budżetach czy dokumentach trafiają do dedykowanej kolejki akceptacji, gdzie manager osobiście zatwierdza działania agenta przed ich realizacją.
+              A dedicated AI-native operational assistant and CRM system built for an artist manager. It uses retrieval-augmented generation (RAG) and vector embeddings of historical data—including invoices, project budgets, contracts, and plans—to provide the assistant with rich operational context for analysis and question answering. The platform automates document workflows and invoicing, using Gemini 2.5 Flash Vision for invoice OCR and the Polish Bielik model for chat and command handling. A key architectural safeguard is its Human-in-the-Loop approach: all proposed changes to records, budgets, or documents are routed to a dedicated approval queue, where the manager personally reviews and authorizes each action before execution.
             </p>
             <div class="tags">
               <span>RAG & Vector Embeddings</span>
@@ -123,14 +112,11 @@
                 class="repo-link">GitHub ↗</a>
             </div>
             <p class="project-desc">
-              Pipeline ETL do zautomatyzowanego pobierania, parsowania i czyszczenia danych o polskich
-              przedsiębiorstwach drzewnych z publicznych rejestrów CEIDG i KRS. System normalizuje dane podmiotów
-              gospodarczych, przeprowadza geokodowanie adresowe i udostępnia interaktywny dashboard analityczny z
-              wizualizacją przestrzenną.
+              An ETL pipeline for automatically collecting, parsing, and cleaning data on Polish wood-industry businesses from the public CEIDG and KRS registers. The system standardizes business entity records, geocodes addresses, and provides an interactive analytical dashboard with geospatial visualizations.
             </p>
             <div class="tags">
               <span>Python</span>
-              <span>CEIDG & KRS API</span>
+              <span>CEIDG & KRS APIs</span>
               <span>Automated ETL Pipeline</span>
               <span>Geocoding & Spatial Data</span>
             </div>
@@ -147,10 +133,7 @@
                 class="repo-link">GitHub ↗</a>
             </div>
             <p class="project-desc">
-              Cyfrowy portal obsługi serwisowej i zamawiania części zamiennych dla maszyn przemysłowych GROSS.
-              Wykorzystuje natywne Web API do skanowania kodów QR bezpośrednio z kamer urządzeń, interaktywny katalog z
-              hierarchicznym drzewem podzespołów maszyn oraz dedykowany panel administracyjny do zarządzania bazą
-              części.
+              A digital service and spare-parts ordering portal for GROSS industrial machinery. It uses native Web APIs to scan QR codes directly through device cameras, features an interactive catalog with a hierarchical machine component tree, and includes a dedicated administration panel for managing the spare-parts database.
             </p>
             <div class="tags">
               <span>TypeScript</span>
