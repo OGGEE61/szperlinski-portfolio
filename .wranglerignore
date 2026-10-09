@@ -1,0 +1,11 @@
+.git
+.git/**
+.wrangler
+.wrangler/**
+.assetsignore
+functions
+functions/**
+node_modules
+node_modules/**
+wrangler.json
+*.log
