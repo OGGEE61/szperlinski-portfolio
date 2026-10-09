@@ -1,0 +1,225 @@
+/* ==========================================================================
+   CZYSTY, MINIMALISTYCZNY DESIGN BIAŁO-CZARNY
+   ========================================================================== */
+
+:root {
+  --bg: #000000;
+  --text: #ffffff;
+  --muted: #888888;
+  --subtle: #555555;
+  --border: #222222;
+  --border-hover: #444444;
+  --tag-bg: #111111;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --text: #000000;
+    --muted: #666666;
+    --subtle: #999999;
+    --border: #e5e5e5;
+    --border-hover: #111111;
+    --tag-bg: #f4f4f4;
+  }
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 4.5rem 1.5rem;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrapper {
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Nagłówek & Dane Kontaktowe */
+.header {
+  margin-bottom: 4rem;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  color: var(--text);
+  margin-bottom: 0.35rem;
+}
+
+.role {
+  font-size: 0.95rem;
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 1.25rem;
+}
+
+.bio {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.65;
+  margin-bottom: 1.5rem;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  font-size: 0.92rem;
+}
+
+.links a {
+  color: var(--text);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--subtle);
+  transition: text-decoration-color 0.15s ease, opacity 0.15s ease;
+}
+
+.links a:hover {
+  text-decoration-color: var(--text);
+  opacity: 0.8;
+}
+
+.sep {
+  color: var(--border);
+  user-select: none;
+}
+
+/* Sekcja Projektów */
+.section-title {
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  margin-bottom: 2rem;
+}
+
+.project-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.project-item {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 2.25rem;
+}
+
+.project-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.project-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.project-title {
+  color: var(--text);
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: opacity 0.15s ease;
+}
+
+.project-title:hover {
+  opacity: 0.65;
+}
+
+.project-title span {
+  font-size: 0.85rem;
+  transition: transform 0.15s ease;
+}
+
+.project-title:hover span {
+  transform: translate(2px, -2px);
+}
+
+.project-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.82rem;
+}
+
+.repo-link {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.repo-link:hover {
+  color: var(--text);
+}
+
+.project-tag {
+  color: var(--subtle);
+  font-variant-numeric: tabular-nums;
+}
+
+.project-desc {
+  font-size: 0.93rem;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 0.85rem;
+}
+
+/* Tagi technologii */
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.tags span {
+  font-size: 0.75rem;
+  color: var(--muted);
+  background-color: var(--tag-bg);
+  border: 1px solid var(--border);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Stopka */
+.footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.82rem;
+  color: var(--subtle);
+}
+
+/* RWD */
+@media (max-width: 600px) {
+  body {
+    padding: 3rem 1.25rem;
+  }
+  
+  .project-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+}

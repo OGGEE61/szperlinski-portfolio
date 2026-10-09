@@ -1,0 +1,13 @@
+# Nagłówki bezpieczeństwa i pamięci podręcznej dla Cloudflare Pages
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: document-domain=(), geolocation=(), microphone=(), camera=()
+
+# Długi cache dla zasobów statycznych (CSS, JS, czcionki, obrazy)
+/*.css
+  Cache-Control: public, max-age=31536000, immutable
+
+/*.js
+  Cache-Control: public, max-age=31536000, immutable
