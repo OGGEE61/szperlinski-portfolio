@@ -149,6 +149,28 @@
       <p>© 2026 Gustaw Max Szperliński</p>
     </footer>
   </div>
+
+  <script>
+    (function () {
+      try {
+        // Nie wysyłaj powiadomień podczas lokalnego testowania na localhost
+        if (location.hostname === 'localhost' || location.hostname === '127.0.0.1') return;
+
+        // Wyślij tylko jedno powiadomienie na sesję (zapobiega spamowi przy odświeżaniu)
+        if (sessionStorage.getItem('portfolio_visited')) return;
+        sessionStorage.setItem('portfolio_visited', '1');
+
+        fetch('/api/visit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            referrer: document.referrer || '',
+            path: location.pathname
+          })
+        }).catch(function () {});
+      } catch (e) {}
+    })();
+  </script>
 </body>
 
 </html>
