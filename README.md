@@ -1,6 +1,6 @@
 # Portfolio
 
-### Deploy (Cloudflare Workers)
+### Deploy (Cloudflare Pages)
 ```bash
-npx wrangler deploy
+npx wrangler pages deploy .
 ```

@@ -2,11 +2,14 @@ export async function onRequestPost(context) {
   try {
     const { request, env } = context;
 
-    // Pobranie adresu Webhooka ze zmiennej środowiskowej Cloudflare Pages lub domyślnego
-    const fallbackWebhook = atob(
-      "aHR0cHM6Ly9kaXNjb3JkLmNvbS9hcGkvd2ViaG9va3MvMTU1ODA4MzgwOTk1NjU5NzkwMi9sTHZFcmdzVVVySkJhUjB4SEN4ajR1OE5tTk9sQnd0a0ZwYXp5VDlwaHQ4Q0UtbTdna1FJd1YwRUZPS1AyVEVyYkdFRg=="
-    );
-    const webhookUrl = env.DISCORD_WEBHOOK_URL || fallbackWebhook;
+    // Pobranie adresu Webhooka ze zmiennej środowiskowej Cloudflare
+    const webhookUrl = env.DISCORD_WEBHOOK_URL;
+    if (!webhookUrl) {
+      return new Response(JSON.stringify({ status: "webhook_not_configured" }), {
+        status: 200,
+        headers: { "Content-Type": "application/json" }
+      });
+    }
 
     const userAgent = request.headers.get("user-agent") || "Nieznane";
 
