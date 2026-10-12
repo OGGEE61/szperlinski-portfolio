@@ -7,4 +7,5 @@ node_modules/**
 *.log
 functions
 functions/**
+worker.js
 wrangler.json
