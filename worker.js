@@ -1,5 +1,25 @@
+// Site-wide password (browser login box). Any username; the password must equal SITE_PASSWORD.
+// If SITE_PASSWORD is not set, nobody gets in.
+function hasSitePassword(request, env) {
+  const header = request.headers.get("authorization") || "";
+  if (!env.SITE_PASSWORD || !header.startsWith("Basic ")) return false;
+  try {
+    const decoded = atob(header.slice(6));
+    return decoded.slice(decoded.indexOf(":") + 1) === env.SITE_PASSWORD;
+  } catch {
+    return false;
+  }
+}
+
 export default {
   async fetch(request, env) {
+    if (!hasSitePassword(request, env)) {
+      return new Response("Password required", {
+        status: 401,
+        headers: { "WWW-Authenticate": 'Basic realm="Nexopel", charset="UTF-8"' },
+      });
+    }
+
     const url = new URL(request.url);
 
     if (url.pathname === "/api/visit" && request.method === "POST") {
